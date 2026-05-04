@@ -1,97 +1,113 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExpertTax | בדיקת החזר מס מקצועית לשכירים</title>
+    <title>ExpertTax | Audit פיננסי לשכירים בשכר גבוה</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: left 1rem center; background-size: 1.5em; }
+        .checkbox-custom { width: 20px; height: 20px; border: 1px solid #334155; border-radius: 4px; appearance: none; cursor: pointer; transition: 0.2s; position: relative; background: #1e293b; }
+        .checkbox-custom:checked { background-color: #2563eb; border-color: #2563eb; }
+        .checkbox-custom:checked::after { content: '✓'; position: absolute; color: white; font-size: 14px; left: 4px; top: -1px; }
     </style>
 </head>
 <body class="text-slate-200">
 
-    <!-- Nav -->
     <nav class="p-6 border-b border-slate-800">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-xl font-bold tracking-tighter text-blue-400">EXPERT<span class="text-white">TAX</span></div>
-            <div class="text-xs uppercase tracking-widest text-slate-500 font-semibold">Human-Check Accuracy</div>
+            <div class="text-xs uppercase tracking-widest text-slate-500 font-semibold">Security-First Tax Audit</div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="py-16 md:py-24">
-        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+    <section class="py-12 md:py-20">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-start">
+            
+            <!-- Left Side: Information & Authority -->
             <div>
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                    בדיקת החזר מס עם <span class="text-blue-500">אפס סיכון</span> לחוב.
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    Audit פיננסי להחזרי מס: <br><span class="text-blue-500">דיוק מקסימלי, אפס חובות.</span>
                 </h1>
                 <p class="text-lg text-slate-400 mb-8 leading-relaxed">
-                    מיצוי זכויות מס לשכירים, בעלי אופציות ומחליפי עבודה. אנחנו מבצעים סימולציה אנושית מדויקת ומגישים רק כשבטוח שמגיע לך כסף.
+                    משרדנו מתמחה בבדיקות עומק לשכירים בעלי שכר גבוה. אנחנו לא "מפעל לידים" – כל תיק עובר סימולציה אנושית ע"י רואה חשבון לפני הגשה.
                 </p>
-                
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-center gap-3">
-                        <span class="text-blue-500 text-xl">▹</span>
-                        <span>בדיקה רטרואקטיבית עד 6 שנים אחורה</span>
+
+                <div class="space-y-6 mb-12">
+                    <div class="flex gap-4">
+                        <div class="text-blue-500 font-bold">01.</div>
+                        <div>
+                            <h4 class="font-bold text-white">איסוף נתונים פסיבי</h4>
+                            <p class="text-sm text-slate-500">אנחנו דואגים למשוך את כל הטפסים (106, אישורי בנקים) עבורך.</p>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <span class="text-blue-500 text-xl">▹</span>
-                        <span>ניתוח רצף זכויות במעברי עבודה ופדיון ימי חופשה</span>
+                    <div class="flex gap-4 border-y border-slate-800/50 py-6">
+                        <div class="text-blue-500 font-bold">02.</div>
+                        <div>
+                            <h4 class="font-bold text-white">סימולציית הגנה</h4>
+                            <p class="text-sm text-slate-500">בדיקה פנימית במערכות המדמות את רשות המסים למניעת יצירת חוב.</p>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <span class="text-blue-500 text-xl">▹</span>
-                        <span>סימולציה פנימית לפני הגשה למניעת יצירת חוב</span>
+                    <div class="flex gap-4">
+                        <div class="text-blue-500 font-bold">03.</div>
+                        <div>
+                            <h4 class="font-bold text-white">מיצוי רטרואקטיבי</h4>
+                            <p class="text-sm text-slate-500">בדיקה מקיפה של 6 שנים אחורה, כולל החלפת מעסיקים ורווחים בשוק ההון.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Lead Form -->
-            <div class="glass p-8 rounded-3xl shadow-2xl">
-                <h3 class="text-2xl font-bold mb-6 text-white text-right">בדיקת זכאות ראשונית</h3>
-                <!-- החלף את YOUR_ID_HERE ב-ID מ-Formspree -->
-                <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-5 text-right">
+            <!-- Right Side: The Professional Form -->
+            <div class="glass p-8 rounded-3xl shadow-2xl sticky top-10 border border-blue-500/10">
+                <h3 class="text-2xl font-bold mb-6 text-white text-right">בדיקת היתכנות ל-Audit</h3>
+                
+                <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-6 text-right">
                     <div>
-                        <input type="text" name="name" placeholder="שם מלא" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-white outline-none transition placeholder-slate-500" required>
+                        <input type="text" name="name" placeholder="שם מלא" class="w-full bg-slate-900/50 border border-slate-800 p-4 rounded-xl focus:border-blue-500 text-white outline-none transition" required>
                     </div>
                     <div>
-                        <input type="tel" name="phone" placeholder="טלפון נייד" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-white outline-none transition placeholder-slate-500" required>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <select name="sector" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-slate-300 outline-none appearance-none cursor-pointer" required>
-                            <option value="" disabled selected>מגזר תעסוקה</option>
-                            <option value="hitech">הייטק / טכנולוגיה</option>
-                            <option value="public">מגזר ציבורי</option>
-                            <option value="other">אחר</option>
-                        </select>
-                        <select name="options" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-slate-300 outline-none appearance-none cursor-pointer" required>
-                            <option value="" disabled selected>אופציות / RSU?</option>
-                            <option value="yes">יש לי אופציות</option>
-                            <option value="no">אין לי אופציות</option>
-                        </select>
+                        <input type="tel" name="phone" placeholder="טלפון נייד" class="w-full bg-slate-900/50 border border-slate-800 p-4 rounded-xl focus:border-blue-500 text-white outline-none transition" required>
                     </div>
 
-                    <!-- Redirect after submission -->
+                    <div class="space-y-4 pt-2">
+                        <p class="text-sm text-slate-400 font-semibold mb-2 text-right">סמן את הסעיפים הרלוונטיים:</p>
+                        
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" name="has_options" class="checkbox-custom">
+                            <span class="text-sm group-hover:text-blue-400 transition">יש לי אופציות / RSU / מניות בחברה</span>
+                        </label>
+
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" name="job_change" class="checkbox-custom">
+                            <span class="text-sm group-hover:text-blue-400 transition">החלפתי מעסיק ב-6 השנים האחרונות</span>
+                        </label>
+
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" name="high_salary" class="checkbox-custom">
+                            <span class="text-sm group-hover:text-blue-400 transition">שכר חודשי ממוצע מעל 20,000 ש"ח</span>
+                        </label>
+                    </div>
+
                     <input type="hidden" name="_next" value="https://tax-landing-page-phi.vercel.app/thank-you.html">
                     
                     <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-5 rounded-xl transition duration-300 text-lg shadow-lg shadow-blue-600/20">
-                        Check My Eligibility
+                        הגשת בקשה לבדיקה
                     </button>
+                    
+                    <p class="text-[11px] text-slate-500 text-center leading-tight">
+                        בדיקת הזכאות ראשונית וללא התחייבות. <br>המידע מאובטח ברמת פרוטוקול SSL.
+                    </p>
                 </form>
-                <p class="text-[10px] text-slate-500 mt-4 text-center">המידע מאובטח ומשמש לצורך בדיקת החזר מס בלבד ע"י רו"ח.</p>
             </div>
+
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-slate-800 opacity-60">
-        <div class="container mx-auto px-4 text-center text-sm tracking-widest uppercase">
-            Precision Audit • Human Interface • No Debt Guarantee
-        </div>
+    <footer class="py-10 border-t border-slate-800 opacity-40 text-center text-[10px] tracking-widest uppercase">
+        Professional Tax Liability Audit • 2026 Edition
     </footer>
 
 </body>
