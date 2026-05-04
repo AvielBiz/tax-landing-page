@@ -9,59 +9,67 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .checkbox-custom { width: 20px; height: 20px; border: 1px solid #334155; border-radius: 4px; appearance: none; cursor: pointer; transition: 0.2s; position: relative; background: #1e293b; }
+        .checkbox-custom { width: 18px; height: 18px; border: 1px solid #334155; border-radius: 4px; appearance: none; cursor: pointer; transition: 0.2s; position: relative; background: #1e293b; }
         .checkbox-custom:checked { background-color: #2563eb; border-color: #2563eb; }
-        .checkbox-custom:checked::after { content: '✓'; position: absolute; color: white; font-size: 14px; left: 4px; top: -1px; }
+        .checkbox-custom:checked::after { content: '✓'; position: absolute; color: white; font-size: 12px; left: 3px; top: -1px; }
     </style>
 </head>
 <body class="text-slate-200">
 
+    <!-- Top Contact Bar -->
+    <div class="bg-blue-600 text-white text-[13px] py-2.5 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-center items-center gap-4">
+            <span class="font-medium">מענה אנושי מהיר:</span>
+            <a href="tel:[0543322207]" class="bg-white text-blue-600 px-3 py-1 rounded-full font-bold hover:bg-blue-50 transition">
+                📞 לשיחה עם נציג לבדיקת זכאות
+            </a>
+        </div>
+    </div>
+
     <nav class="p-6 border-b border-slate-800">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-xl font-bold tracking-tighter text-blue-400">EXPERT<span class="text-white">TAX</span></div>
-            <div class="text-xs uppercase tracking-widest text-slate-500 font-semibold">Security-First Tax Audit</div>
+            <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold hidden md:block">Security-First Tax Audit</div>
         </div>
     </nav>
 
     <section class="py-12 md:py-20">
         <div class="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-start">
             
-            <!-- Left Side: Information & Authority -->
             <div>
                 <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                    Audit פיננסי להחזרי מס: <br><span class="text-blue-500">דיוק מקסימלי, אפס חובות.</span>
+                    Audit פיננסי להחזרי מס: <br><span class="text-blue-500 font-extrabold">דיוק מקסימלי, אפס חובות.</span>
                 </h1>
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed">
-                    משרדנו מתמחה בבדיקות עומק לשכירים בעלי שכר גבוה. אנחנו לא "מפעל לידים" – כל תיק עובר סימולציה אנושית ע"י רואה חשבון לפני הגשה.
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed italic">
+                    "אנחנו לא אפליקציה. אנחנו משרד מומחה שמבצע סימולציה אנושית לפני כל הגשה. מגיע לך החזר? תקבל את המקסימום. יש סיכון לחוב? אנחנו פשוט לא מגישים."
                 </p>
 
                 <div class="space-y-6 mb-12">
                     <div class="flex gap-4">
-                        <div class="text-blue-500 font-bold">01.</div>
+                        <div class="text-blue-500 font-bold text-xl">01.</div>
                         <div>
-                            <h4 class="font-bold text-white">איסוף נתונים פסיבי</h4>
-                            <p class="text-sm text-slate-500">אנחנו דואגים למשוך את כל הטפסים (106, אישורי בנקים) עבורך.</p>
+                            <h4 class="font-bold text-white text-lg">איסוף נתונים פסיבי</h4>
+                            <p class="text-sm text-slate-500">אנחנו דואגים למשוך עבורך את כל הטפסים והאישורים מהמעסיקים ומהבנקים.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 border-y border-slate-800/50 py-6">
-                        <div class="text-blue-500 font-bold">02.</div>
+                        <div class="text-blue-500 font-bold text-xl">02.</div>
                         <div>
-                            <h4 class="font-bold text-white">סימולציית הגנה</h4>
-                            <p class="text-sm text-slate-500">בדיקה פנימית במערכות המדמות את רשות המסים למניעת יצירת חוב.</p>
+                            <h4 class="font-bold text-white text-lg">סימולציית הגנה</h4>
+                            <p class="text-sm text-slate-500">בדיקה פנימית במערכות המדמות את רשות המסים למניעת יצירת חוב בתיק.</p>
                         </div>
                     </div>
-                    <div class="flex gap-4">
-                        <div class="text-blue-500 font-bold">03.</div>
+                    <div class="flex gap-4 text-white">
+                        <div class="text-blue-500 font-bold text-xl">03.</div>
                         <div>
-                            <h4 class="font-bold text-white">מיצוי רטרואקטיבי</h4>
-                            <p class="text-sm text-slate-500">בדיקה מקיפה של 6 שנים אחורה, כולל החלפת מעסיקים ורווחים בשוק ההון.</p>
+                            <h4 class="font-bold text-white text-lg font-bold underline decoration-blue-500/50 text-white">מיצוי רטרואקטיבי</h4>
+                            <p class="text-sm text-slate-500">בדיקה מקיפה של 6 שנים אחורה, כולל החלפת מעסיקים, אופציות ורווחים בשוק ההון.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Side: The Professional Form -->
-            <div class="glass p-8 rounded-3xl shadow-2xl sticky top-10 border border-blue-500/10">
+            <div class="glass p-8 rounded-3xl shadow-2xl sticky top-24 border border-blue-500/10">
                 <h3 class="text-2xl font-bold mb-6 text-white text-right">בדיקת היתכנות ל-Audit</h3>
                 
                 <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-6 text-right">
