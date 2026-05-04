@@ -3,142 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExpertTax | Audit פיננסי לשכירים בשכר גבוה</title>
+    <title>ExpertTax | Audit פיננסי פרימיום</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* התיקון הקריטי: הגדרת רקע כהה וצבע טקסט בהיר כברירת מחדל */
+        /* הגדרות צבעים קשיחות למניעת בעיות תצוגה */
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #0f172a; 
-            color: #f1f5f9;
-            scroll-behavior: smooth; 
+            background-color: #020617 !important; 
+            color: #f1f5f9 !important;
+            margin: 0;
+            padding: 0;
         }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .checkbox-custom { width: 18px; height: 18px; border: 1px solid #475569; border-radius: 4px; appearance: none; cursor: pointer; transition: 0.2s; position: relative; background: #1e293b; flex-shrink: 0; }
-        .checkbox-custom:checked { background-color: #2563eb; border-color: #2563eb; }
-        .checkbox-custom:checked::after { content: '✓'; position: absolute; color: white; font-size: 12px; left: 3px; top: -1px; }
-        .hero-gradient { background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent); }
+        .glass-card { 
+            background: rgba(30, 41, 59, 0.7); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(51, 65, 85, 0.5); 
+            border-radius: 2rem;
+        }
+        .input-style {
+            background-color: #0f172a !important;
+            border: 1px solid #334155 !important;
+            color: white !important;
+            border-radius: 0.75rem;
+            padding: 1rem;
+        }
+        .checkbox-custom { 
+            width: 20px; height: 20px; 
+            border: 1px solid #475569; 
+            border-radius: 4px; 
+            appearance: none; 
+            cursor: pointer; 
+            background: #1e293b; 
+            flex-shrink: 0;
+        }
+        .checkbox-custom:checked { background-color: #2563eb; position: relative; }
+        .checkbox-custom:checked::after { 
+            content: '✓'; position: absolute; color: white; 
+            font-size: 14px; left: 4px; top: -2px; 
+        }
     </style>
 </head>
-<body class="hero-gradient">
+<body class="min-h-screen">
 
-    <!-- Accessibility Script (Enable) -->
+    <!-- Accessibility -->
     <script async src="https://cdn.enable.co.il/licenses/enable-v2.min.js"></script>
 
-    <!-- Top Contact Bar -->
-    <div class="bg-blue-600 text-white text-[13px] py-2.5 sticky top-0 z-50 shadow-lg text-center">
-        <div class="container mx-auto px-4 flex justify-center items-center gap-4">
-            <span class="font-medium hidden md:block italic text-blue-100 uppercase tracking-tight">Financial Audit & Compliance:</span>
-            <a href="tel:0543322207" class="bg-white text-blue-600 px-4 py-1.5 rounded-full font-bold hover:scale-105 transition-transform shadow-md">
-                📞 לשיחה ישירה: 054-3322207
+    <!-- Header -->
+    <div class="bg-blue-600 text-white py-3 px-4 sticky top-0 z-50 shadow-xl text-center font-bold">
+        <div class="container mx-auto flex justify-center items-center gap-3">
+            <span class="text-sm opacity-90 hidden md:inline uppercase tracking-widest">Financial Audit System:</span>
+            <a href="tel:0543322207" class="bg-white text-blue-600 px-5 py-1.5 rounded-full hover:scale-105 transition shadow-lg text-sm">
+                📞 התקשר לבדיקת זכאות: 054-3322207
             </a>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="p-6 border-b border-slate-800/50">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-xl font-bold tracking-tighter text-blue-400 uppercase">Expert<span class="text-white">Tax</span></div>
-            <div class="text-[9px] uppercase tracking-[0.3em] text-slate-500 font-bold hidden md:block italic">Precision Audit System</div>
+    <nav class="py-8 container mx-auto px-6 border-b border-slate-800">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter text-blue-500 uppercase">Expert<span class="text-white">Tax</span></div>
+            <div class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em] italic hidden md:block">Security & Compliance</div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <section class="py-12 md:py-20 lg:py-28">
-        <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-20 items-start">
-            
-            <!-- Branding Side -->
-            <div class="space-y-8">
-                <div class="inline-block px-4 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest italic">
-                    Certified Professional Audit
-                </div>
-                <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] mb-6 italic text-white">
-                    Audit פיננסי <br><span class="text-blue-500 font-extrabold italic text-shadow-lg">ללא סיכוני חוב.</span>
+    <main class="container mx-auto px-6 py-12 md:py-24 grid lg:grid-cols-2 gap-16 items-start">
+        
+        <!-- Text Side -->
+        <div class="space-y-10">
+            <div class="space-y-4">
+                <span class="text-blue-500 font-bold tracking-[0.2em] uppercase text-xs italic">Professional Tax Audit 2026</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold italic leading-tight text-white">
+                    Audit פיננסי <br><span class="text-blue-600">ללא סיכוני חוב.</span>
                 </h1>
-                <p class="text-xl text-slate-400 leading-relaxed max-w-xl italic border-r-4 border-blue-600 pr-6">
-                    "תהליך ה-Audit שלנו נועד למטרה אחת: לוודא שאתה מקבל את המקסימום המגיע לך, תוך הגנה מלאה מפני יצירת חוב בתיק."
+                <p class="text-xl text-slate-400 leading-relaxed border-r-4 border-blue-600 pr-6 italic max-w-lg">
+                    "אנו מבצעים ביקורת עומק וסימולציה אנושית לפני כל הגשה. אם קיים חשש לחוב – אנו פשוט לא מגישים."
                 </p>
+            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
-                    <div class="glass p-6 rounded-2xl border-blue-500/5 hover:border-blue-500/20 transition">
-                        <div class="text-blue-500 font-black text-xl mb-2">01</div>
-                        <h4 class="font-bold text-white mb-2 italic text-lg tracking-tight">סימולציה מקדימה</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed">שימוש במערכת חישוב המדמה את רשות המסים למניעת טעויות הגשה.</p>
-                    </div>
-                    <div class="glass p-6 rounded-2xl border-blue-500/5 hover:border-blue-500/20 transition">
-                        <div class="text-blue-500 font-black text-xl mb-2">02</div>
-                        <h4 class="font-bold text-white mb-2 italic text-lg tracking-tight">ניתוח רטרואקטיבי</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed">סריקה יסודית של 6 שנים אחורה, כולל אירועי שכר מורכבים ושינויי חיים.</p>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <div class="text-blue-500 font-bold text-lg mb-1">01. סימולציה</div>
+                    <p class="text-sm text-slate-500">חישוב מוקדם במערכת המדמה את רשות המסים למניעת טעויות.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <div class="text-blue-500 font-bold text-lg mb-1">02. ביקורת</div>
+                    <p class="text-sm text-slate-500">סריקה של 6 שנים אחורה כולל אירועי שכר מורכבים ושינויי סטטוס.</p>
                 </div>
             </div>
-
-            <!-- Lead Form -->
-            <div class="glass p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative border-blue-500/20 overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
-                <h3 class="text-2xl font-bold mb-8 text-white text-right">בדיקת היתכנות ל-Audit</h3>
-                
-                <form id="taxForm" class="space-y-6 text-right">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-right" dir="rtl">
-                        <input type="text" name="name" placeholder="שם מלא" class="w-full bg-slate-900/80 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-white outline-none transition placeholder-slate-600 shadow-inner" required>
-                        <input type="tel" id="phoneInput" name="phone" placeholder="טלפון נייד" maxlength="10" class="w-full bg-slate-900/80 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-white outline-none transition placeholder-slate-600 shadow-inner text-right" required>
-                    </div>
-                    <p id="phoneError" class="text-red-500 text-[10px] hidden font-bold">נא להזין מספר ישראלי תקין (10 ספרות, מתחיל ב-05)</p>
-
-                    <div class="pt-4 border-t border-slate-800/50">
-                        <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-6 italic">סעיפים רלוונטיים ב-6 השנים האחרונות:</p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8 text-right" dir="rtl">
-                            <label class="flex items-start gap-3 cursor-pointer group">
-                                <input type="checkbox" name="high_salary" class="checkbox-custom mt-0.5">
-                                <span class="text-[13px] text-slate-300 group-hover:text-blue-400 transition leading-tight">שכר ברוטו מעל 25,000 ש"ח</span>
-                            </label>
-                            <label class="flex items-start gap-3 cursor-pointer group">
-                                <input type="checkbox" name="has_options" class="checkbox-custom mt-0.5">
-                                <span class="text-[13px] text-slate-300 group-hover:text-blue-400 transition leading-tight">קבלת מניות / RSU / אופציות</span>
-                            </label>
-                            <label class="flex items-start gap-3 cursor-pointer group">
-                                <input type="checkbox" name="job_change" class="checkbox-custom mt-0.5">
-                                <span class="text-[13px] text-slate-300 group-hover:text-blue-400 transition leading-tight">החלפת מעסיקים / הפסקת עבודה</span>
-                            </label>
-                            <label class="flex items-start gap-3 cursor-pointer group">
-                                <input type="checkbox" name="unemployment_leave" class="checkbox-custom mt-0.5">
-                                <span class="text-[13px] text-slate-300 group-hover:text-blue-400 transition leading-tight">תקופת אבטלה / חל"ת</span>
-                            </label>
-                            <label class="flex items-start gap-3 cursor-pointer group">
-                                <input type="checkbox" name="status_change" class="checkbox-custom mt-0.5">
-                                <span class="text-[13px] text-slate-300 group-hover:text-blue-400 transition leading-tight">שינוי סטטוס (נישואין / ילדים)</span>
-                            </label>
-                            <label class="flex items-start gap-3 cursor-pointer group">
-                                <input type="checkbox" name="pension_withdraw" class="checkbox-custom mt-0.5">
-                                <span class="text-[13px] text-blue-300 font-medium group-hover:text-blue-200 transition leading-tight">משיכת כספי פנסיה / מענקים</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-5 rounded-xl transition duration-300 text-lg shadow-lg shadow-blue-600/30 uppercase tracking-widest mt-4">
-                        שלח בקשה ל-AUDIT
-                    </button>
-                    <p id="formStatus" class="text-center text-xs mt-4 hidden italic text-blue-400 animate-pulse font-medium">מבצע ניתוח נתונים ראשוני...</p>
-                </form>
-            </div>
-
         </div>
-    </section>
+
+        <!-- Form Side -->
+        <div class="glass-card p-8 md:p-12 shadow-2xl border-t-4 border-t-blue-600">
+            <h3 class="text-2xl font-bold mb-8 text-white text-right italic">בדיקת היתכנות ל-Audit</h3>
+            
+            <form id="taxForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" name="name" placeholder="שם מלא" class="input-style w-full text-right" required>
+                    <input type="tel" id="phoneInput" name="phone" placeholder="טלפון נייד" maxlength="10" class="input-style w-full text-right" required>
+                </div>
+                <p id="phoneError" class="text-red-500 text-[10px] hidden font-bold text-right">נא להזין מספר ישראלי תקין (10 ספרות, מתחיל ב-05)</p>
+
+                <div class="pt-6 border-t border-slate-800">
+                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-6 text-right italic text-blue-400">סמן סעיפים רלוונטיים (6 שנים אחרונות):</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-right" dir="rtl">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" name="high_salary" class="checkbox-custom">
+                            <span class="text-sm text-slate-300 group-hover:text-white transition italic">שכר מעל 25K ברוטו</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" name="has_options" class="checkbox-custom">
+                            <span class="text-sm text-slate-300 group-hover:text-white transition italic">מניות / RSU / אופציות</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" name="job_change" class="checkbox-custom">
+                            <span class="text-sm text-slate-300 group-hover:text-white transition italic">החלפת עבודה / חל"ת</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" name="status_change" class="checkbox-custom">
+                            <span class="text-sm text-slate-300 group-hover:text-white transition italic">שינוי סטטוס משפחתי</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group md:col-span-2 bg-blue-500/5 p-3 rounded-lg border border-blue-500/10">
+                            <input type="checkbox" name="pension_withdraw" class="checkbox-custom">
+                            <span class="text-sm text-blue-400 font-bold group-hover:text-blue-300 transition italic">משיכת כספי פנסיה / מענקים</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-5 rounded-xl transition duration-300 text-lg shadow-lg shadow-blue-600/20 uppercase tracking-widest">
+                    הגשת בקשה ל-Audit
+                </button>
+                <p id="formStatus" class="text-center text-[10px] mt-4 hidden italic text-blue-400 animate-pulse font-bold">מעבד נתונים במערכת...</p>
+            </form>
+        </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="py-16 border-t border-slate-800/30 bg-slate-950/40 text-center">
-        <div class="container mx-auto px-4">
-            <div class="text-[9px] text-slate-700 tracking-[0.4em] uppercase mb-6 font-bold">ExpertTax Compliance Audit • Israel 2026</div>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-sm text-slate-500 italic">
-                <a href="mailto:nagar.aviel@gmail.com" class="hover:text-blue-400 transition underline">nagar.aviel@gmail.com</a>
-                <span class="hidden md:inline opacity-20">|</span>
-                <span class="tracking-tight uppercase">Premium Financial Service</span>
+    <footer class="py-16 bg-slate-950/80 border-t border-slate-900 text-center">
+        <div class="container mx-auto px-6 italic">
+            <div class="text-[10px] text-slate-700 tracking-[0.5em] uppercase mb-4 font-bold">ExpertTax Compliance Audit • 2026</div>
+            <div class="text-sm text-slate-500 flex flex-col md:flex-row justify-center gap-4">
+                <a href="mailto:nagar.aviel@gmail.com" class="hover:text-blue-500 transition">nagar.aviel@gmail.com</a>
+                <span class="hidden md:block opacity-20">|</span>
+                <span>בדיקה אנושית ומקצועית לשכירים בשכר גבוה</span>
             </div>
         </div>
     </footer>
 
+    <!-- Logic -->
     <script>
         const taxForm = document.getElementById('taxForm');
         const phoneInput = document.getElementById('phoneInput');
@@ -151,24 +165,22 @@
             const isValid = /^05\d{8}$/.test(this.value);
             if (this.value.length > 0 && !isValid) {
                 phoneError.classList.remove('hidden');
-                this.classList.add('border-red-500/40');
+                this.style.borderColor = '#ef4444';
             } else {
                 phoneError.classList.add('hidden');
-                this.classList.remove('border-red-500/40');
+                this.style.borderColor = '#334155';
             }
         });
 
         taxForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             const isValid = /^05\d{8}$/.test(phoneInput.value);
-            if (!isValid) {
-                phoneError.classList.remove('hidden');
-                phoneInput.focus();
-                return;
-            }
+            if (!isValid) return;
+
             submitBtn.disabled = true;
             submitBtn.innerText = 'שולח...';
             statusMsg.classList.remove('hidden');
+
             const formData = new FormData(taxForm);
             try {
                 const response = await fetch('https://formspree.io/f/mdabeenw', {
@@ -179,14 +191,13 @@
                 if (response.ok) {
                     window.location.href = 'thank-you.html';
                 } else {
-                    alert('תקלה בשליחה. פנה אלינו טלפונית.');
+                    alert('שגיאה בשליחה. נסה שוב.');
                     submitBtn.disabled = false;
-                    submitBtn.innerText = 'שלח בקשה ל-AUDIT';
+                    submitBtn.innerText = 'הגשת בקשה ל-Audit';
                 }
             } catch (error) {
                 alert('שגיאת חיבור.');
                 submitBtn.disabled = false;
-                submitBtn.innerText = 'שלח בקשה ל-AUDIT';
             }
         });
     </script>
