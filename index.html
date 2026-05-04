@@ -4,181 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>בדיקת זכאות להחזר מס | מקצוענות ללא פשרות</title>
-    <!-- Tailwind CSS & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
-        .glass-card { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
-        .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); }
-        .whatsapp-float { animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-        input[type="range"]::-webkit-slider-thumb { appearance: none; width: 20px; height: 20px; background: #2563eb; border-radius: 50%; cursor: pointer; }
+        .step-content { display: none; }
+        .step-content.active { display: block; animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .glass-card { background: #ffffff; border: 1px solid #e2e8f0; }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
     <!-- Header -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-extrabold text-blue-700 tracking-tight">TAX<span class="text-slate-900">MASTER</span></div>
-            <a href="#calculator" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition-all shadow-lg">בדיקת זכאות חינם</a>
+            <div class="text-sm font-bold text-slate-500 hidden md:block">בדיקת זכאות מקצועית 2026</div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient text-white py-24 px-6">
+    <section class="hero-gradient text-white py-16 px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">אלפי שקלים מהמס מחכים לך בקופה</h1>
-            <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">אנחנו לא רק מגישים טפסים, אנחנו נלחמים על כל שקל שמגיע לך. בדיקה מקצועית ללא התחייבות.</p>
-            <div class="flex flex-wrap justify-center gap-6">
-                <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-xl border border-white/20">
-                    <i data-lucide="check-circle-2" class="text-green-400"></i>
-                    <span class="text-sm font-medium">מעל 90% הצלחה בהחזרים</span>
-                </div>
-                <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-xl border border-white/20">
-                    <i data-lucide="shield-check" class="text-blue-400"></i>
-                    <span class="text-sm font-medium">טיפול ע"י מומחי מס</span>
-                </div>
-            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">האם מגיע לך כסף מהמדינה?</h1>
+            <p class="text-lg text-slate-400">תהליך קצר של דקה שיכול להיות שווה לך אלפי שקלים</p>
         </div>
     </section>
 
-    <!-- Calculator Section -->
-    <section id="calculator" class="max-w-3xl mx-auto -mt-16 px-6 relative z-10">
-        <div class="glass-card rounded-3xl shadow-2xl p-8 md:p-12 border-t-8 border-blue-600">
-            <h2 class="text-2xl font-bold mb-8 text-center text-slate-900">מחשבון הערכת החזר מהיר</h2>
+    <!-- Multi-Step Calculator -->
+    <section id="calculator" class="max-w-2xl mx-auto -mt-10 px-6 pb-20 relative z-10">
+        <div class="glass-card rounded-3xl shadow-2xl p-8 md:p-10 border-t-8 border-blue-600">
             
-            <div class="space-y-8">
-                <!-- Status & Years -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <label class="block text-sm font-bold mb-3 text-slate-700">סטטוס תעסוקתי</label>
-                        <select id="jobStatus" class="w-full p-4 rounded-xl border-2 border-slate-200 outline-none focus:border-blue-500 transition-colors bg-white">
-                            <option value="employee">שכיר/ה</option>
-                            <option value="both">גם שכיר וגם עצמאי</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-3 text-slate-700">שנות עבודה לבדיקה: <span id="yearsDisplay" class="text-blue-600 font-black">6</span></label>
-                        <input type="range" id="yearsRange" min="1" max="6" value="6" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-4">
+            <!-- Progress Bar -->
+            <div class="mb-10">
+                <div class="flex justify-between text-xs font-bold text-slate-400 mb-2">
+                    <span id="progressText">שלב 1 מתוך 8</span>
+                    <span id="percentText">12%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div id="progressBar" class="bg-blue-600 h-full transition-all duration-500" style="width: 12.5%"></div>
+                </div>
+            </div>
+
+            <div id="quizContainer">
+                <!-- Step 1: Salary Range -->
+                <div class="step-content active" data-step="1">
+                    <h3 class="text-xl font-bold mb-6 text-center text-slate-900">מהו טווח השכר החודשי הממוצע שלך?</h3>
+                    <div class="grid gap-3">
+                        <button onclick="nextStep(1200)" class="w-full p-4 text-right border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all font-semibold">עד 7,000 ₪</button>
+                        <button onclick="nextStep(1800)" class="w-full p-4 text-right border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all font-semibold">7,000 ₪ - 12,000 ₪</button>
+                        <button onclick="nextStep(2500)" class="w-full p-4 text-right border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all font-semibold">מעל 12,000 ₪</button>
                     </div>
                 </div>
 
-                <!-- Checkboxes -->
-                <div class="grid gap-4">
-                    <label class="flex items-center gap-4 cursor-pointer p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-blue-200 hover:bg-blue-50 transition-all">
-                        <input type="checkbox" id="changedJobs" class="w-6 h-6 rounded accent-blue-600">
-                        <span class="text-sm font-semibold text-slate-700">החלפתי עבודה או לא עבדתי מספר חודשים (ב-6 השנים האחרונות)</span>
-                    </label>
-                    <label class="flex items-center gap-4 cursor-pointer p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-blue-200 hover:bg-blue-50 transition-all">
-                        <input type="checkbox" id="children" class="w-6 h-6 rounded accent-blue-600">
-                        <span class="text-sm font-semibold text-slate-700">נולד לי ילד/ה או שסטטוס משפחתי השתנה</span>
-                    </label>
+                <!-- Step 2: Changed Jobs -->
+                <div class="step-content" data-step="2">
+                    <h3 class="text-xl font-bold mb-6 text-center text-slate-900">האם החלפת מעסיק ב-6 השנים האחרונות?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="addScore(1500); nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">כן</button>
+                        <button onclick="nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">לא</button>
+                    </div>
                 </div>
 
-                <button onclick="calculateRefund()" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xl font-black py-5 rounded-2xl transition-all shadow-blue-200 shadow-2xl transform hover:-translate-y-1">
-                    בדוק זכאות עכשיו
-                </button>
+                <!-- Step 3: Unemployment/Furlough -->
+                <div class="step-content" data-step="3">
+                    <h3 class="text-xl font-bold mb-6 text-center text-slate-900">האם היית בתקופת אבטלה או חל"ת?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="addScore(1200); nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">כן</button>
+                        <button onclick="nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">לא</button>
+                    </div>
+                </div>
 
-                <!-- Results Area (Hidden by default) -->
-                <div id="resultArea" class="hidden mt-10 p-8 bg-green-50 border-2 border-green-200 rounded-3xl text-center animate-in fade-in zoom-in duration-500">
-                    <p class="text-slate-700 font-bold text-lg">פוטנציאל החזר משוער שנמצא:</p>
-                    <div class="text-5xl font-black text-green-600 my-4 tracking-tight">₪<span id="estimatedAmount">0</span>*</div>
-                    <p class="text-sm text-slate-500 leading-relaxed">*הסכום הנו הערכה ראשונית בלבד על בסיס הנתונים שהוזנו. בדיקה סופית תתבצע מול רשויות המס.</p>
-                    
-                    <a href="https://wa.me/972XXXXXXXXX?text=היי, בדקתי במחשבון ויצא לי פוטנציאל החזר של ₪" 
-                       id="whatsappLink"
-                       target="_blank"
-                       class="inline-flex items-center gap-2 mt-6 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl transition-all">
-                        <i data-lucide="message-circle"></i>
-                        דבר איתנו בוואטסאפ למימוש
-                    </a>
+                <!-- Step 4: Kids -->
+                <div class="step-content" data-step="4">
+                    <h3 class="text-xl font-bold mb-6 text-center text-slate-900">האם נולד לך ילד/ה ב-6 השנים האחרונות?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="addScore(2000); nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">כן</button>
+                        <button onclick="nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">לא</button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Academic Degree -->
+                <div class="step-content" data-step="5">
+                    <h3 class="text-xl font-bold mb-6 text-center text-slate-900">האם סיימת תואר אקדמי או לימודי מקצוע?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="addScore(1000); nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">כן</button>
+                        <button onclick="nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">לא</button>
+                    </div>
+                </div>
+
+                <!-- Step 6: Miluim -->
+                <div class="step-content" data-step="6">
+                    <h3 class="text-xl font-bold mb-6 text-center text-slate-900">האם שירתת במילואים מעל 10 ימים בשנה?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="addScore(800); nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">כן</button>
+                        <button onclick="nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">לא</button>
+                    </div>
+                </div>
+
+                <!-- Step 7: Donations -->
+                <div class="step-content" data-step="7">
+                    <h3 class="text-xl font-bold mb-6 text-center text-slate-900">האם תרמת למוסדות מוכרים (סעיף 46)?</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="addScore(500); nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">כן</button>
+                        <button onclick="nextStep();" class="p-6 border-2 border-slate-100 rounded-xl hover:border-blue-500 hover:bg-blue-50 font-bold">לא</button>
+                    </div>
+                </div>
+
+                <!-- Step 8: Final Result -->
+                <div class="step-content text-center" data-step="8">
+                    <div class="bg-green-50 p-8 rounded-3xl border-2 border-green-100">
+                        <i data-lucide="party-popper" class="w-12 h-12 text-green-500 mx-auto mb-4"></i>
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">יש לך פוטנציאל החזר!</h3>
+                        <div class="text-5xl font-black text-green-600 my-6 tracking-tight">₪<span id="finalAmount">0</span>*</div>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            סכום זה אינו שערוך כללי. <br> אם תרצה לדעת סכום מדויק יותר, כדאי שנדבר.
+                        </p>
+                        
+                        <div class="grid gap-3">
+                            <a href="https://wa.me/972543322207?text=שלום, סיימתי את המחשבון ויצא לי פוטנציאל החזר גבוה. אשמח לדבר עם נציג אנושי" 
+                               target="_blank" class="flex items-center justify-center gap-2 bg-green-500 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-green-600 transition-all">
+                                <i data-lucide="message-circle"></i>
+                                צור קשר עם נציג אנושי בוואטסאפ
+                            </a>
+                            <a href="tel:0543322207" class="flex items-center justify-center gap-2 bg-blue-600 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-blue-700 transition-all">
+                                <i data-lucide="phone"></i>
+                                התקשר עכשיו: 054-3322207
+                            </a>
+                        </div>
+                        <p class="text-[10px] text-slate-400 mt-6">*החישוב מבוסס על ממוצעי החזרים ואינו מהווה התחייבות לסכום הסופי.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section class="py-24 px-6 max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-12">
-            <div class="text-center group">
-                <div class="bg-blue-100 w-20 h-20 rounded-3xl flex items-center justify-center mb-6 mx-auto text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                    <i data-lucide="zap" class="w-10 h-10"></i>
-                </div>
-                <h4 class="text-xl font-extrabold mb-3">מהירות שיא</h4>
-                <p class="text-slate-600 leading-relaxed">אנחנו מחברים אתכם ישירות למערכות המס כדי לקבל תשובות מהירות בלי בירוקרטיה מיותרת.</p>
+    <!-- Features -->
+    <section class="max-w-4xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-8">
+        <div class="flex gap-4 items-start">
+            <div class="bg-blue-100 p-3 rounded-lg text-blue-600"><i data-lucide="clock"></i></div>
+            <div>
+                <h4 class="font-bold">בדיקה מהירה</h4>
+                <p class="text-sm text-slate-500">תוך פחות מ-60 שניות תדע אם מגיע לך כסף חזרה.</p>
             </div>
-            <div class="text-center group">
-                <div class="bg-green-100 w-20 h-20 rounded-3xl flex items-center justify-center mb-6 mx-auto text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
-                    <i data-lucide="trending-up" class="w-10 h-10"></i>
-                </div>
-                <h4 class="text-xl font-extrabold mb-3">מיקסום החזר</h4>
-                <p class="text-slate-600 leading-relaxed">המומחים שלנו בודקים כל סעיף קטן, נקודת זיכוי או פער שכר שיכולים להכניס לכם עוד כסף.</p>
-            </div>
-            <div class="text-center group">
-                <div class="bg-purple-100 w-20 h-20 rounded-3xl flex items-center justify-center mb-6 mx-auto text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
-                    <i data-lucide="users" class="w-10 h-10"></i>
-                </div>
-                <h4 class="text-xl font-extrabold mb-3">ליווי אישי</h4>
-                <p class="text-slate-600 leading-relaxed">אתם לא מספר במערכת. אצלנו מקבלים יחס אישי ועדכונים שוטפים בוואטסאפ לכל אורך התהליך.</p>
+        </div>
+        <div class="flex gap-4 items-start">
+            <div class="bg-blue-100 p-3 rounded-lg text-blue-600"><i data-lucide="lock"></i></div>
+            <div>
+                <h4 class="font-bold">דיסקרטיות מלאה</h4>
+                <p class="text-sm text-slate-500">המידע שלך מוגן ומאובטח לפי התקנים המחמירים ביותר.</p>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-500 py-12 px-6 text-center border-t border-slate-800">
-        <div class="text-xl font-extrabold text-white mb-6">TAX<span class="text-blue-500">MASTER</span></div>
-        <p class="mb-4 text-sm tracking-wide">נלחמים על הכסף שלך מול רשויות המס | זמינים לכל שאלה</p>
-        <p class="text-xs">© 2026 כל הזכויות שמורות</p>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/972XXXXXXXXX?text=היי, אני רוצה לבדוק זכאות להחזר מס" 
-       target="_blank" 
-       class="whatsapp-float fixed bottom-8 right-8 bg-green-500 text-white p-5 rounded-full shadow-2xl z-50 hover:bg-green-600 transition-colors">
-        <i data-lucide="message-square" class="w-8 h-8"></i>
-    </a>
 
     <script>
         // Initialize Icons
         lucide.createIcons();
 
-        // Update years display
-        const yearsRange = document.getElementById('yearsRange');
-        const yearsDisplay = document.getElementById('yearsDisplay');
-        
-        yearsRange.addEventListener('input', (e) => {
-            yearsDisplay.innerText = e.target.value;
-        });
+        let currentStep = 1;
+        let totalScore = 0;
+        const totalSteps = 8;
 
-        function calculateRefund() {
-            const years = parseInt(yearsRange.value);
-            const changedJobs = document.getElementById('changedJobs').checked;
-            const children = document.getElementById('children').checked;
+        function addScore(amount) {
+            totalScore += amount;
+        }
 
-            // Logic: Base per year + bonuses for high-potential flags
-            let estimate = years * 1450; 
+        function nextStep(initialAmount = 0) {
+            if (initialAmount > 0) totalScore = initialAmount;
+
+            // Hide current step
+            document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
             
-            if (changedJobs) estimate += (years * 600);
-            if (children) estimate += 2200;
+            // Increment
+            currentStep++;
             
-            // Randomize slightly for "authentic" feel
-            estimate = estimate + (Math.floor(Math.random() * 450));
+            // Show next step
+            const nextContent = document.querySelector(`[data-step="${currentStep}"]`);
+            if (nextContent) {
+                nextContent.classList.add('active');
+                updateProgress();
+            }
 
-            // Display
-            document.getElementById('estimatedAmount').innerText = estimate.toLocaleString();
-            document.getElementById('resultArea').classList.remove('hidden');
-            
-            // Update WhatsApp link with the specific amount
-            const waLink = document.getElementById('whatsappLink');
-            const baseUrl = "https://wa.me/972508932102?text=";
-            const message = `היי, בדקתי במחשבון ויצא לי פוטנציאל החזר של כ-₪${estimate.toLocaleString()}. אשמח לבדיקה מקצועית.`;
-            waLink.href = baseUrl + encodeURIComponent(message);
+            // If it's the last step, show the amount
+            if (currentStep === totalSteps) {
+                // הוספת רנדומליות קלה לאמינות
+                const final = totalScore + Math.floor(Math.random() * 600);
+                document.getElementById('finalAmount').innerText = final.toLocaleString();
+            }
+        }
 
-            // Scroll to result
-            document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        function updateProgress() {
+            const percent = (currentStep / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = percent + '%';
+            document.getElementById('progressText').innerText = `שלב ${currentStep} מתוך ${totalSteps}`;
+            document.getElementById('percentText').innerText = Math.floor(percent) + '%';
         }
     </script>
 </body>
