@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExpertTax | Audit פיננסי לשכירים ובעלי אופציות</title>
+    <title>ExpertTax | בדיקת החזר מס מקצועית לשכירים</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: left 1rem center; background-size: 1.5em; }
     </style>
 </head>
 <body class="text-slate-200">
@@ -17,102 +18,81 @@
     <nav class="p-6 border-b border-slate-800">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-xl font-bold tracking-tighter text-blue-400">EXPERT<span class="text-white">TAX</span></div>
-            <div class="text-xs uppercase tracking-widest text-slate-500">Security & Precision First</div>
+            <div class="text-xs uppercase tracking-widest text-slate-500 font-semibold">Human-Check Accuracy</div>
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                    אל תשאיר את ה-<span class="text-blue-500 underline decoration-blue-500/30">Equity</span> שלך למקרה.
+                    בדיקת החזר מס עם <span class="text-blue-500">אפס סיכון</span> לחוב.
                 </h1>
                 <p class="text-lg text-slate-400 mb-8 leading-relaxed">
-                    מיצוי זכויות מס לשכירים בשכר גבוה, בעלי אופציות (RSU/Options) ומחליפי עבודה. בדיקה אנושית עמוקה ללא סיכון חשיפה לחוב. 
+                    מיצוי זכויות מס לשכירים, בעלי אופציות ומחליפי עבודה. אנחנו מבצעים סימולציה אנושית מדויקת ומגישים רק כשבטוח שמגיע לך כסף.
                 </p>
-                <div class="space-y-4">
+                
+                <div class="space-y-4 mb-8">
                     <div class="flex items-center gap-3">
-                        <span class="text-blue-500">▹</span>
-                        <span>ניתוח אירועי מס מורכבים (מיזוגים, רכישות, מעברי עבודה)</span>
+                        <span class="text-blue-500 text-xl">▹</span>
+                        <span>בדיקה רטרואקטיבית עד 6 שנים אחורה</span>
                     </div>
                     <div class="flex items-center gap-3">
-                        <span class="text-blue-500">▹</span>
-                        <span>סימולציה מקדימה בטרם הגשה לרשות המסים</span>
+                        <span class="text-blue-500 text-xl">▹</span>
+                        <span>ניתוח רצף זכויות במעברי עבודה ופדיון ימי חופשה</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-blue-500 text-xl">▹</span>
+                        <span>סימולציה פנימית לפני הגשה למניעת יצירת חוב</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Form Card -->
+            <!-- Lead Form -->
             <div class="glass p-8 rounded-3xl shadow-2xl">
-                <h3 class="text-2xl font-bold mb-6 text-white text-right">התחלת Audit מהיר</h3>
-                <!-- החלף את ה-ID בלינק של Formspree -->
-                <<form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-5 text-right">
+                <h3 class="text-2xl font-bold mb-6 text-white text-right">בדיקת זכאות ראשונית</h3>
+                <!-- החלף את YOUR_ID_HERE ב-ID מ-Formspree -->
+                <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-5 text-right">
                     <div>
                         <input type="text" name="name" placeholder="שם מלא" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-white outline-none transition placeholder-slate-500" required>
                     </div>
                     <div>
                         <input type="tel" name="phone" placeholder="טלפון נייד" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-white outline-none transition placeholder-slate-500" required>
                     </div>
+                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="relative">
-                            <select name="role" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-slate-200 outline-none appearance-none cursor-pointer">
-                                <option value="" disabled selected>תחום עיסוק</option>
-                                <option value="hitech">הייטק / טכנולוגיה</option>
-                                <option value="management">ניהול בכיר</option>
-                                <option value="other">אחר</option>
-                            </select>
-                        </div>
-                        <div class="relative">
-                            <select name="options" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-slate-200 outline-none appearance-none cursor-pointer">
-                                <option value="" disabled selected>האם יש אופציות/RSU?</option>
-                                <option value="yes">יש לי אופציות/RSU</option>
-                                <option value="no">אין לי אופציות</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- Redirect to Thank You Page -->
-                    <input type="hidden" name="_next" value="https://tax-landing-page-phi.vercel.app/thank-you.html">
-                    
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-5 rounded-xl transition duration-300 text-lg shadow-lg shadow-blue-600/20 uppercase tracking-wide">
-                        Check My Eligibility
-                    </button>
-                </form>>
-                    <div>
-                        <input type="text" name="name" placeholder="שם מלא" class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-blue-500 outline-none transition" required>
-                    </div>
-                    <div>
-                        <input type="tel" name="phone" placeholder="טלפון נייד" class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-blue-500 outline-none transition" required>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <select name="role" class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-blue-500 outline-none text-slate-400">
-                            <option>הייטק / טכנולוגיה</option>
-                            <option>ניהול בכיר</option>
-                            <option>אחר</option>
+                        <select name="sector" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-slate-300 outline-none appearance-none cursor-pointer" required>
+                            <option value="" disabled selected>מגזר תעסוקה</option>
+                            <option value="hitech">הייטק / טכנולוגיה</option>
+                            <option value="public">מגזר ציבורי</option>
+                            <option value="other">אחר</option>
                         </select>
-                        <select name="options" class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-blue-500 outline-none text-slate-400">
-                            <option>יש לי אופציות/RSU</option>
-                            <option>אין לי אופציות</option>
+                        <select name="options" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:border-blue-500 text-slate-300 outline-none appearance-none cursor-pointer" required>
+                            <option value="" disabled selected>אופציות / RSU?</option>
+                            <option value="yes">יש לי אופציות</option>
+                            <option value="no">אין לי אופציות</option>
                         </select>
                     </div>
-                    <!-- Redirect to Thank You Page -->
+
+                    <!-- Redirect after submission -->
                     <input type="hidden" name="_next" value="https://tax-landing-page-phi.vercel.app/thank-you.html">
                     
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-5 rounded-xl transition duration-300 text-lg shadow-lg shadow-blue-600/20 uppercase tracking-wide">
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-5 rounded-xl transition duration-300 text-lg shadow-lg shadow-blue-600/20">
                         Check My Eligibility
                     </button>
                 </form>
+                <p class="text-[10px] text-slate-500 mt-4 text-center">המידע מאובטח ומשמש לצורך בדיקת החזר מס בלבד ע"י רו"ח.</p>
             </div>
         </div>
     </section>
 
-    <!-- Tech Badges -->
-    <div class="container mx-auto px-4 pb-20 opacity-40 grayscale flex flex-wrap justify-center gap-12 text-sm font-bold">
-        <span>PRECISION AUDIT</span>
-        <span>RSU SPECIALISTS</span>
-        <span>DATA SECURITY</span>
-        <span>TAX COMPLIANCE</span>
-    </div>
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800 opacity-60">
+        <div class="container mx-auto px-4 text-center text-sm tracking-widest uppercase">
+            Precision Audit • Human Interface • No Debt Guarantee
+        </div>
+    </footer>
 
 </body>
 </html>
