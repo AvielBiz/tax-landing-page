@@ -115,5 +115,44 @@
         // Initialize Icons
         lucide.createIcons();
     </script>
+    <script>
+    // אתחול אייקונים
+    lucide.createIcons();
+
+    function calculateRefund() {
+        // קבלת נתונים מהשדות
+        const status = document.getElementById('jobStatus').value;
+        const years = parseInt(document.getElementById('yearsRange').value);
+        const changedJobs = document.getElementById('changedJobs').checked;
+        const children = document.getElementById('children').checked;
+
+        // לוגיקה של "סוס פרעה" - הערכה גסה למשיכת ליד
+        let baseAmount = 1200; // סכום בסיס להחזר ממוצע לשנה
+        let multiplier = years;
+        
+        if (changedJobs) multiplier *= 1.5; // החלפת עבודות = סיכוי גבוה להחזר
+        if (children) baseAmount += 800; // נקודות זיכוי על ילדים שלא עודכנו
+
+        let totalEstimate = baseAmount * multiplier;
+        
+        // הגבלה כדי שלא ייראה מוגזם מדי (פסיכולוגיה של אמינות)
+        if (totalEstimate > 12000) totalEstimate = 12000 + (Math.random() * 2000);
+        
+        // הצגת התוצאה
+        const resultDiv = document.getElementById('resultArea');
+        const amountSpan = document.getElementById('estimatedAmount');
+        
+        resultDiv.classList.remove('hidden');
+        amountSpan.innerText = Math.floor(totalEstimate).toLocaleString();
+        
+        // גלילה חלקה לתוצאה
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // עדכון מספר השנים בתצוגה
+    document.getElementById('yearsRange').addEventListener('input', function(e) {
+        document.getElementById('yearsDisplay').innerText = e.target.value;
+    });
+</script>
 </body>
 </html>
